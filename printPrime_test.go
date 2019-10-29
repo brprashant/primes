@@ -11,9 +11,7 @@ func TestNumberSeries(t *testing.T){
 	go numbers(c)
 
 	val :=2
-
 	for r:=0;r<1000000;r++{
-
 		if ret := <-c; ret!=val {
 			t.Errorf("expected %d, got %d", val, ret)
 		}

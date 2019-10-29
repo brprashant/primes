@@ -15,11 +15,12 @@ func main() {
 	n := flag.Int("n", 10, "suggesting a reasonable int less <5000")
 	flag.Parse()
 
-	if *n > 5000 || *n<1 {
+	if *n > 5000 || *n<0 {
 		fmt.Println("suggest a positive input less than 5000")
 		return
 	}
 
+	// primes including 1!
 	primes := append([]int{1}, NPrimes(*n)...)
 
 	bigNum := primes[*n-1] * primes[*n-1]
@@ -34,8 +35,8 @@ func main() {
 		fmt.Printf("\n")
 	}
 
+	return
 }
-
 
 // number generating channel :shrug:
 func numbers(ch chan<- int) {
