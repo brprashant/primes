@@ -15,7 +15,7 @@ func main() {
 	n := flag.Int("n", 10, "suggesting a reasonable int less <5000")
 	flag.Parse()
 
-	if *n > 5000 || *n<0 {
+	if *n > 5000 || *n<1 {
 		fmt.Println("suggest a positive input less than 5000")
 		return
 	}
