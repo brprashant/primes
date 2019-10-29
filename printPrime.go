@@ -16,7 +16,7 @@ func main() {
 	flag.Parse()
 
 	if *n > 5000 || *n<1 {
-		fmt.Println("suggest a positive input less than 5000")
+		fmt.Println("suggest a positive input between 1 and 5000")
 		return
 	}
 
