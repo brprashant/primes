@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"strconv"
 )
@@ -13,21 +14,31 @@ import (
 func main() {
 	fmt.Println("Hello, world.")
 
-	// accept numbers
-	// print table of n_prime * n_prime
-	// first row and column is primes
+	n := flag.Int("n", 10, "suggesting a reasonable int less <5000")
+	flag.Parse()
 
-	// GENERATE primes []int
-	primes := nPrimes(10)
+	if *n > 5000 {
+		fmt.Println("suggest an input less than 5000")
+		return
+	}
 
-	// primes := []int
-	// for every number in primes
-		// print current prime * every number in prime and print
-		// new line
-	// end
+	primes := nPrimes(*n)
+
+	bigNum := primes[*n-1] * primes[*n-1]
+	strBigNum := strconv.Itoa(bigNum)
+	maxPad := len(strBigNum)
+	space := []byte(" ")
+
 	for _,x := range primes {
 		for _,y := range primes {
-			fmt.Printf(strconv.Itoa(x*y) + " ")
+			num := x*y
+			hold := []byte(strconv.Itoa(num))
+
+			for ;maxPad-len(hold)!=0;{
+				hold = append(hold, space[0])
+			}
+
+			fmt.Print(string(hold) + " ")
 		}
 		fmt.Printf("\n")
 	}
@@ -38,7 +49,7 @@ func nPrimes(n int) []int{
 	var allPrimes []int
 
 
-	for i:=1;len(allPrimes)<n;i++ {
+	for i:=1;len(allPrimes)<n+1;i++ {
 		num := i
 		if isPrime(num) {
 			allPrimes = append(allPrimes, num)
