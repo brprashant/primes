@@ -1,6 +1,6 @@
 # primes
 
-###Problem statment 
+### Problem statment 
 
 Objective
 Write a program that prints out a multiplication table of the first 10 prime numbers.
@@ -17,7 +17,7 @@ Notes
 >Suggested to be written in Python or Ruby.
 >>Chose `go`, because of current usage familiarity. 
 
-###Current Status : 
+### Current Status : 
 1. Reuires GO to be installed for clean build and run.
 2. `Provided executable will work on a mac. But not tested or copiled for external machines.`
 3. Compiles program. 
@@ -54,6 +54,7 @@ Notes
        19  38  57  95  133 209 247 323 361 437 551 
        23  46  69  115 161 253 299 391 437 529 667 
        29  58  87  145 203 319 377 493 551 667 841 
+       MacBook-Pro-2:primes brprashant$
     ```
 
 2. Given n
